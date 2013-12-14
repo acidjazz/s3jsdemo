@@ -11,10 +11,30 @@ you'll need
 ## s3.js
 the S3 AWS SDK wrapper, simply instanciatie it
 ```javascript
- s3.i();
+s3.i();
 ```
 
 and use it's functions
+```javascript
+s3.list();
 ```
-  s3.list();
 
+sample jade attempt
+```jade
+
+body
+
+  .container
+    .button.login Log In with Facebook
+
+    figure.loader
+      .dot.white
+      .dot.red
+      .dot.yellow
+      .dot.green
+      .dot.blue
+
+#fb-root
+
+```
+woop
