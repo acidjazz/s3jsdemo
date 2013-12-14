@@ -1,0 +1,54 @@
+// stylus -w sty/main.styl -o css/.
+
+@import nib
+
+// http://www.colourlovers.com/palette/482774/dream_magnet
+grey1 = #343838
+cyan1 = #005f6b
+cyan2 = #008c9e
+cyan3 = #00b4cc
+cyan4 = #00dffc
+
+.clear
+  clearfix()
+
+// kill mobile text highlighting
+*
+  -webkit-touch-callout  none
+  -webkit-text-size-adjust  none
+  -webkit-user-select  none                  
+  -webkit-tap-highlight-color transparent
+  user-select rgba(0,0,0,0)
+*/
+
+
+// shared
+.button
+  cursor pointer
+  font-weight 300
+  font-size 1.2em
+  padding 1em 3em
+  background-color cyan1
+  color cyan4
+  border 0.1em solid cyan4
+  &:hover
+    box-shadow 0em 0em 1em 0.1em cyan4
+  &:active
+    box-shadow inset 0em 0em 1em cyan4
+
+body
+  background-color grey1
+  font-size 14px
+  font-family Roboto
+  font-weight 100
+
+.container
+  text-align center
+
+.login
+  display inline-block
+  text-align center
+  margin 10em 0 0 0
+
+@import _loader
+

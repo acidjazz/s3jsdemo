@@ -1,0 +1,58 @@
+!!!
+
+// jade -P -w tpl/index.jade -o .
+
+html
+  head
+    title s3 test
+    link(rel='stylesheet',href='/css/main.css',type='text/css',media='all')
+    link(href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900',rel='stylesheet',type='text/css')
+
+    // libs
+    script(type='text/javascript', src='/jst/lib/jquery-2.0.3.min.js')
+    script(type='text/javascript', src='/jst/lib/aws-sdk-2.0.0-rc3.min.js')
+
+    script(type='text/javascript', src='/jst/main.js')
+    script(type='text/javascript', src='/jst/s3.js')
+
+    // mobile metas
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    meta(name='format-detection', content='telephone=no')
+    meta(name='viewport', content='user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height')
+
+  body
+
+    .container
+      .button.login Log In with Facebook
+
+      figure.loader
+        .dot.white
+        .dot.red
+        .dot.yellow
+        .dot.green
+        .dot.blue
+
+  #fb-root
+
+  script.
+
+    s3.appId = '474746479249450';
+    s3.roleArn = 'arn:aws:iam::751311555268:role/s3test';
+    s3.bucketName = 'tangerine-images';
+
+    window.fbAsyncInit = function() {
+
+      FB.init({appId: '474746479249450'});
+
+      s3.i();
+      _.i();
+
+    };
+
+    (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
