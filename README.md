@@ -3,6 +3,8 @@ simple s3 JS SDK using facebook auth on a bucket to view its contents on mobile/
 
 ## requirements
 you'll need
+* AWS s3 account
+* AWS s3 bucket with lots of images
 * a browser
 
 
