@@ -14,12 +14,7 @@
   -webkit-text-size-adjust: none;
   -webkit-user-select: none;
   -webkit-tap-highlight-color: transparent;
-  -webkit-user-select: rgba(0,0,0,0);
-  -moz-user-select: rgba(0,0,0,0);
-  -ms-user-select: rgba(0,0,0,0);
-  user-select: rgba(0,0,0,0);
 }
-*
 .button {
   cursor: pointer;
   font-weight: 300;
@@ -47,9 +42,23 @@ body {
   text-align: center;
 }
 .login {
-  display: inline-block;
+  display: none;
+  width: 10em;
   text-align: center;
-  margin: 10em 0 0 0;
+  margin: 10em auto;
+}
+.item {
+  position: relative;
+  display: inline-block;
+  width: 213.33333333333334px;
+  height: 160px;
+  border: 1px solid #00b4cc;
+  margin: 0.5em;
+}
+.item .image {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
 }
 figure.loader {
   position: absolute;
@@ -546,5 +555,88 @@ figure.loader .dot.blue {
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
+  }
+}
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.sloader {
+  height: 10px;
+  background-color: rgba(0,140,158,0.5);
+  -webkit-animation: sloader 3s linearinfinite;
+  -moz-animation: sloader 3s linearinfinite;
+  -o-animation: sloader 3s linearinfinite;
+  -ms-animation: sloader 3s linearinfinite;
+  animation: sloader 3s linearinfinite;
+  -webkit-box-shadow: inset 0em 0em 1em #00dffc;
+  box-shadow: inset 0em 0em 1em #00dffc;
+}
+@-moz-keyframes sloader {
+  0% {
+    width: 0%;
+  }
+
+  50% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0%;
+  }
+}
+@-webkit-keyframes sloader {
+  0% {
+    width: 0%;
+  }
+
+  50% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0%;
+  }
+}
+@-o-keyframes sloader {
+  0% {
+    width: 0%;
+  }
+
+  50% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0%;
+  }
+}
+@-ms-keyframes sloader {
+  0% {
+    width: 0%;
+  }
+
+  50% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0%;
+  }
+}
+@keyframes sloader {
+  0% {
+    width: 0%;
+  }
+
+  50% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0%;
   }
 }

@@ -19,7 +19,6 @@ var s3 = {
         s3.fbUserId = response.authResponse.userID;
         s3.fbToken = response.authResponse.accessToken;
         s3.initConfig();
-        s3.list();
         callback(true);
       } else {
         callback(false);
@@ -39,25 +38,7 @@ var s3 = {
 
   },
 
-  list: function() {
-
-    s3.bucket.listObjects()
-      .on('success', function(response) {
-
-      console.log(response.data.Contents.length);
-
-    }).on('error', function(response) {
-
-      alert('error');
-      console.log(response);
-      
-    }).on('complete', function(response) {
-      // always runs
-    }).send();
-
-  },
-
-  login: function() {
+  login: function(callback) {
 
     FB.login(function(response) {
 
@@ -65,9 +46,34 @@ var s3 = {
         s3.fbUserId = response.authResponse.userID;
         s3.fbToken = response.authResponse.accessToken;
         s3.initConfig();
+        callback(true);
       } else {
-        alert('You must authenticate to continue');
+        callback(false);
       }
+
+    });
+
+  },
+
+  list: function(callback) {
+
+    s3.bucket.listObjects()
+      .on('success', function(response) {
+      callback(response.data);
+    }).on('error', function(response) {
+      console.log(response);
+      callback(false);
+    }).send();
+
+  },
+
+  sign: function(key, callback) {
+
+    var params = {Bucket: s3.bucketName, Key: key, Expires: 60*60};
+
+    s3.bucket.getSignedUrl('getObject', params, function (err, url) {
+
+      callback(url);
 
     });
 

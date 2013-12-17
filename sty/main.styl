@@ -9,6 +9,11 @@ cyan2 = #008c9e
 cyan3 = #00b4cc
 cyan4 = #00dffc
 
+
+// thumb size
+width = 640
+height = 480
+
 .clear
   clearfix()
 
@@ -18,9 +23,6 @@ cyan4 = #00dffc
   -webkit-text-size-adjust  none
   -webkit-user-select  none                  
   -webkit-tap-highlight-color transparent
-  user-select rgba(0,0,0,0)
-*/
-
 
 // shared
 .button
@@ -46,9 +48,21 @@ body
   text-align center
 
 .login
-  display inline-block
+  display none
+  width 10em
   text-align center
-  margin 10em 0 0 0
+  margin 10em auto
+
+.item
+  position relative
+  display inline-block
+  width unit(width/3, 'px')
+  height unit(height/3, 'px')
+  border 1px solid cyan3
+  margin 0.5em
+  .image
+    background-size cover
 
 @import _loader
+@import _sloader
 
