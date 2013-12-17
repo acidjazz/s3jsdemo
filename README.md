@@ -19,22 +19,3 @@ and use it's functions
 s3.list();
 ```
 
-sample jade attempt
-```jade
-
-body
-
-  .container
-    .button.login Log In with Facebook
-
-    figure.loader
-      .dot.white
-      .dot.red
-      .dot.yellow
-      .dot.green
-      .dot.blue
-
-#fb-root
-
-```
-woop
